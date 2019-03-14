@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/controllers/imageHandler.dart' as ih;
 
+/// Stateful-Widget as startPage.
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
 
@@ -14,8 +15,14 @@ class MyHomePage extends StatefulWidget {
   }
 }
 
+/// State of MyHomePage. UI to choose picture from camera as well as gallery.
+/// After selections users can upload an image to the backend and will receive
+/// a jsonResult which is then shown in a Cupertino-Dialog.
 class MyHomePageState extends State<MyHomePage> {
+  /// File which represents the current selected image. Image to classify.
   File file;
+  /// How precise should be confidence rates presented? The higher the more
+  /// numbers after comma.
   int precision = 6;
 
   @override
@@ -95,6 +102,9 @@ class MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  /// Formats confidence rates to make them more appealing.
+  /// @param rawValue: Unformatted confidence rate as string.
+  /// @return String: Return formatted string.
   String formatPrecision(String rawValue) {
     return (double.parse(rawValue)*100).toStringAsFixed(precision)+" %";
   }
