@@ -3,7 +3,7 @@ import "dart:convert";
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/controllers/imageHandler.dart' as ih;
+import 'package:BirthmarkRecognition/controllers/imageHandler.dart' as ih;
 
 /// Stateful-Widget as startPage.
 class MyHomePage extends StatefulWidget {
